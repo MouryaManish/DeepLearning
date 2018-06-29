@@ -1,0 +1,29 @@
+=============================================
+different segrigation of data matrixs shape
+=============================================
+Train data shape:  (49000, 3073)
+Train labels shape:  (49000,)
+Validation data shape:  (1000, 3073)
+Validation labels shape:  (1000,)
+Test data shape:  (1000, 3073)
+Test labels shape:  (1000,)
+dev data shape:  (500, 3073)
+dev labels shape:  (500,)
+=============================================
+loss using loop and time taken
+=============================================
+naive loss: 2.279950e+00 computed in 0.396674s
+=============================================
+loss using vectors and time taken
+=============================================
+vectorized loss: 2.279950e+00 computed in 0.027391s
+=============================================
+loss and gardient differences calculated by using loop and vectorization
+=============================================
+Loss difference: 0.000000
+Gradient difference: 0.000000
+
+===================================================================================
+lr 1.000000e-07 reg 2.500000e+04 train accuracy: 0.329327 val accuracy: 0.346000
+best validation accuracy achieved during cross-validation: 0.346000
+time taken 14.994732s
