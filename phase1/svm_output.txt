@@ -1,92 +1,29 @@
-
-shape of different matrices
-=================================================================
-Train data shape:  (49000, 32, 32, 3)
+=============================================
+different segrigation of data matrixs shape
+=============================================
+Train data shape:  (49000, 3073)
 Train labels shape:  (49000,)
-Validation data shape:  (1000, 32, 32, 3)
+Validation data shape:  (1000, 3073)
 Validation labels shape:  (1000,)
-Test data shape:  (1000, 32, 32, 3)
+Test data shape:  (1000, 3073)
 Test labels shape:  (1000,)
-
-final shape
-========================================================================
-Training data shape:  (49000, 3072)
-Validation data shape:  (1000, 3072)
-Test data shape:  (1000, 3072)
-dev data shape:  (500, 3072)
-
-loss after regularization
-=====================================================
-loss: 9.165430
-
- relative error between analytical check and numerical check
-=====================================================
-numerical: 2.309918 analytic: 2.309918, relative error: 6.021324e-11
-numerical: -17.495364 analytic: -17.495364, relative error: 7.463691e-12
-numerical: -1.345032 analytic: -1.345032, relative error: 1.763610e-10
-numerical: -9.472613 analytic: -9.472613, relative error: 3.448801e-11
-numerical: 12.698958 analytic: 12.698958, relative error: 2.145442e-11
-numerical: 7.577595 analytic: 7.577595, relative error: 7.383158e-11
-numerical: -40.612483 analytic: -40.612483, relative error: 3.126914e-12
-numerical: -37.827877 analytic: -37.827877, relative error: 5.007701e-13
-numerical: -5.635833 analytic: -5.635833, relative error: 2.182595e-11
-numerical: 17.855859 analytic: 17.855859, relative error: 1.467396e-11
-
-time of operation using loop and vectorized
-=====================================================
-Naive loss: 9.165430e+00 computed in 0.128202s
-Vectorized loss: 9.165430e+00 computed in 0.004405s
-
-relative loss difference between the two:
-=====================================================
-difference: -0.000000
-Naive loss and gradient: computed in 0.129955s
-Vectorized loss and gradient: computed in 0.002482s
-difference: 0.000000
-iteration 0 / 1500: loss 787.074815
-iteration 100 / 1500: loss 286.001769
-iteration 200 / 1500: loss 107.416064
-iteration 300 / 1500: loss 42.156668
-iteration 400 / 1500: loss 18.709998
-iteration 500 / 1500: loss 10.374240
-iteration 600 / 1500: loss 7.481233
-iteration 700 / 1500: loss 5.719981
-iteration 800 / 1500: loss 5.203532
-iteration 900 / 1500: loss 5.594493
-iteration 1000 / 1500: loss 5.304244
-iteration 1100 / 1500: loss 5.612915
-iteration 1200 / 1500: loss 5.602729
-iteration 1300 / 1500: loss 5.678899
-iteration 1400 / 1500: loss 5.817403
-That took 4.774013s
-training accuracy: 0.371204
-validation accuracy: 0.379000
-lr 1.000000e-07 reg 2.500000e+04 train accuracy: 0.367776 val accuracy: 0.394000
-lr 1.000000e-07 reg 3.125000e+04 train accuracy: 0.360449 val accuracy: 0.372000
-lr 1.000000e-07 reg 3.750000e+04 train accuracy: 0.363959 val accuracy: 0.367000
-lr 1.000000e-07 reg 4.375000e+04 train accuracy: 0.352531 val accuracy: 0.363000
-lr 1.000000e-07 reg 5.000000e+04 train accuracy: 0.355469 val accuracy: 0.361000
-lr 1.257500e-05 reg 2.500000e+04 train accuracy: 0.147857 val accuracy: 0.162000
-lr 1.257500e-05 reg 3.125000e+04 train accuracy: 0.175612 val accuracy: 0.181000
-lr 1.257500e-05 reg 3.750000e+04 train accuracy: 0.175673 val accuracy: 0.166000
-lr 1.257500e-05 reg 4.375000e+04 train accuracy: 0.168449 val accuracy: 0.160000
-lr 1.257500e-05 reg 5.000000e+04 train accuracy: 0.179735 val accuracy: 0.169000
-lr 2.505000e-05 reg 2.500000e+04 train accuracy: 0.147245 val accuracy: 0.145000
-lr 2.505000e-05 reg 3.125000e+04 train accuracy: 0.094469 val accuracy: 0.092000
-lr 2.505000e-05 reg 3.750000e+04 train accuracy: 0.083939 val accuracy: 0.069000
-lr 2.505000e-05 reg 4.375000e+04 train accuracy: 0.056082 val accuracy: 0.058000
-lr 2.505000e-05 reg 5.000000e+04 train accuracy: 0.051286 val accuracy: 0.054000
-lr 3.752500e-05 reg 2.500000e+04 train accuracy: 0.109122 val accuracy: 0.114000
-lr 3.752500e-05 reg 3.125000e+04 train accuracy: 0.061816 val accuracy: 0.056000
-lr 3.752500e-05 reg 3.750000e+04 train accuracy: 0.100265 val accuracy: 0.087000
-lr 3.752500e-05 reg 4.375000e+04 train accuracy: 0.100265 val accuracy: 0.087000
-lr 3.752500e-05 reg 5.000000e+04 train accuracy: 0.100265 val accuracy: 0.087000
-lr 5.000000e-05 reg 2.500000e+04 train accuracy: 0.096224 val accuracy: 0.084000
-lr 5.000000e-05 reg 3.125000e+04 train accuracy: 0.100265 val accuracy: 0.087000
-lr 5.000000e-05 reg 3.750000e+04 train accuracy: 0.100265 val accuracy: 0.087000
-lr 5.000000e-05 reg 4.375000e+04 train accuracy: 0.100265 val accuracy: 0.087000
-lr 5.000000e-05 reg 5.000000e+04 train accuracy: 0.100265 val accuracy: 0.087000
+dev data shape:  (500, 3073)
+dev labels shape:  (500,)
+=============================================
+loss using loop and time taken
+=============================================
+naive loss: 2.279950e+00 computed in 0.396674s
+=============================================
+loss using vectors and time taken
+=============================================
+vectorized loss: 2.279950e+00 computed in 0.027391s
+=============================================
+loss and gardient differences calculated by using loop and vectorization
+=============================================
+Loss difference: 0.000000
+Gradient difference: 0.000000
 
 ===================================================================================
-best validation accuracy achieved during cross-validation: 0.394000
-That took 127.278535s
+lr 1.000000e-07 reg 2.500000e+04 train accuracy: 0.329327 val accuracy: 0.346000
+best validation accuracy achieved during cross-validation: 0.346000
+time taken 14.994732s
