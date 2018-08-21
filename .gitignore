@@ -1,0 +1,7 @@
+*.swp
+*.pyc
+.env/*
+fileStack/*
+Imagenet/*
+knn.py
+manish.mourya001@chimera.umb.edu
