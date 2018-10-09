@@ -61,4 +61,4 @@
 # this job simply reports the hostname and sleeps for two minutes
 
 module load python/Anaconda3-5.1.0
-python two_layer_net.py
+python features.py

@@ -100,9 +100,20 @@ class TwoLayerNet(object):
     #                              END OF YOUR CODE                             #
     #############################################################################
     shiftedScores= scores - np.max(scores,axis=1)[...,np.newaxis]
+<<<<<<< HEAD
     loss = -shiftedScores[range(N),y] + np.log(np.sum(np.exp(shiftedScores),axis = 1))
     loss = loss.sum()
     loss = loss/N
+=======
+    print("log******  ",np.log(np.sum(np.exp(shiftedScores),axis = 1)))
+    loss = -shiftedScores[range(N),y] + np.log(np.sum(np.exp(shiftedScores),axis = 1))
+    print("******loss before devide")
+    loss = loss.sum()
+    print(loss)
+    loss = loss/N
+    print("*******loss after")
+    print(loss)
+>>>>>>> 57b5afefa613cd98597ff91c0fc6f5bb4e01ac42
     regLoss=  reg * np.sum(W1*W1) +  reg * np.sum(W2*W2)
     loss = loss + regLoss
     # Backward pass: compute gradients

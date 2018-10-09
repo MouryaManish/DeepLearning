@@ -1,0 +1,64 @@
+(49000, 32, 32, 3)
+(1000, 32, 32, 3)
+(1000, 32, 32, 3)
+('X_train: ', (49000, 3, 32, 32))
+('y_train: ', (49000,))
+('X_val: ', (1000, 3, 32, 32))
+('y_val: ', (1000,))
+('X_test: ', (1000, 3, 32, 32))
+('y_test: ', (1000,))
+
+******** Affline forward layer********************
+
+Testing affine_forward function:
+difference:  9.769847728806635e-10
+
+************************Affline backward  layer*********************
+
+Testing affine_backward function:
+dx error:  5.399100368651805e-11
+dw error:  9.904211865398145e-11
+db error:  2.4122867568119087e-11
+
+***********************relu forward layer*********************
+
+Testing relu_forward function:
+difference:  4.999999798022158e-08
+
+***********************relu backward layer**************************
+
+Testing relu_backward function:
+dx error:  3.2756349136310288e-12
+
+***************************sandwich layer**************************
+
+Testing affine_relu_forward and affine_relu_backward:
+dx error:  6.750562121603446e-11
+dw error:  8.162015570444288e-11
+db error:  7.826724021458994e-12
+
+*********************************loss layer: SVM and Sofmax***********************
+
+Testing svm_loss:
+loss:  8.999602749096233
+dx error:  1.4021566006651672e-09
+
+Testing softmax_loss:
+loss:  2.302545844500738
+dx error:  9.384673161989355e-09
+
+******************************************Two layer Net ********************************************************8
+
+Testing initialization ... 
+Testing test-time forward pass ... 
+Testing training loss (no regularization)
+Running numeric gradient check with reg =  0.0
+W1 relative error: 1.22e-08
+W2 relative error: 3.48e-10
+b1 relative error: 6.55e-09
+b2 relative error: 4.33e-10
+Running numeric gradient check with reg =  0.7
+W1 relative error: 8.18e-07
+W2 relative error: 7.98e-08
+b1 relative error: 1.09e-09
+b2 relative error: 7.76e-10
