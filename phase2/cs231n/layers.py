@@ -681,6 +681,8 @@ def svm_loss(x, y):
     - loss: Scalar giving the loss
     - dx: Gradient of the loss with respect to x
     """
+    # Calculating gradient after final layer so there is no w.r.t (w or x) derivative so have put one where ever loss happens.
+    # At a place for derivative with correct class we just count the row that were wrong.
     N = x.shape[0]
     correct_class_scores = x[np.arange(N), y]
     margins = np.maximum(0, x - correct_class_scores[:, np.newaxis] + 1.0)
@@ -711,6 +713,7 @@ def softmax_loss(x, y):
     shifted_logits = x - np.max(x, axis=1, keepdims=True)
     Z = np.sum(np.exp(shifted_logits), axis=1, keepdims=True)
     log_probs = shifted_logits - np.log(Z)
+    # above term is equivalent to log term and below we exponentiate so we get the softmax function. 
     probs = np.exp(log_probs)
     N = x.shape[0]
     loss = -np.sum(log_probs[np.arange(N), y]) / N

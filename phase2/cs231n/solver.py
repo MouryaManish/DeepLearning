@@ -79,7 +79,7 @@ class Solver(object):
         names to gradients of the loss with respect to those parameters.
     """
 
-    def __init__(self, model, data, **kwargs):
+    def __init__(self, model, data, **kwargs):# extract all the data
         """
         Construct a new Solver instance.
 
@@ -147,7 +147,7 @@ class Solver(object):
         self._reset()
 
 
-    def _reset(self):
+    def _reset(self):#resetting all the solver parameter
         """
         Set up some book-keeping variables for optimization. Don't call this
         manually.

@@ -11,11 +11,13 @@ from cs231n.layer_utils import affine_relu_forward, affine_relu_backward
 def rel_error(x, y):
   """ returns relative error """
   return np.max(np.abs(x - y) / (np.maximum(1e-8, np.abs(x) + np.abs(y))))
-
+#=======================================================================================
+print("\n**********getting cifar10_data set***************\n")
+#=========================================================================================
 data = get_CIFAR10_data()
 for k, v in list(data.items()):
   print(('%s: ' % k, v.shape))
-#--------------------------------------------------------------------------------------------------------------
+"""
 #===========================================================================
 print("\n******** Affline forward layer********************\n")
 #===========================================================================
@@ -198,3 +200,11 @@ for reg in [0.0, 0.7]:
     f = lambda _: model.loss(X, y)[0]
     grad_num = eval_numerical_gradient(f, model.params[name], verbose=False)
     print('%s relative error: %.2e' % (name, rel_error(grad_num, grads[name])))
+"""
+#==============================================================================================================
+print("\n**********solver************ \n")
+#=================================================================================================================
+
+model = TwoLayerNet()
+solver = Solver(model,data,optim_config={'learning_rate':1e-3},print_every = 100)
+solver.train()
