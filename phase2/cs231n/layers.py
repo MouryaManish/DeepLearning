@@ -177,7 +177,16 @@ def batchnorm_forward(x, gamma, beta, bn_param):
         # Referencing the original paper (https://arxiv.org/abs/1502.03167)   #
         # might prove to be helpful.                                          #
         #######################################################################
-        pass
+        # using algorithm 1 from the paper
+        mean = np.mean(x,axis=0)
+        var = np.var(x,axis=0)
+        #mask = np.random.choice(200,size=(1,10))
+        x_nor = (x - mean)/np.sqrt(var + eps)
+        out = gamma*x_nor + beta
+        running_mean = momentum * running_mean + (1 - momentum) * mean
+        running_var = momentum * running_var + (1 - momentum) * var
+        #update the cache
+        cache = (mean,var,x,x_nor,eps,gamma,beta)
         #######################################################################
         #                           END OF YOUR CODE                          #
         #######################################################################
@@ -188,7 +197,8 @@ def batchnorm_forward(x, gamma, beta, bn_param):
         # then scale and shift the normalized data using gamma and beta.      #
         # Store the result in the out variable.                               #
         #######################################################################
-        pass
+        x_nor = (x - running_mean)/np.sqrt(running_var + eps)
+        out = gamma*x_nor + beta
         #######################################################################
         #                          END OF YOUR CODE                           #
         #######################################################################
@@ -220,13 +230,29 @@ def batchnorm_backward(dout, cache):
     - dbeta: Gradient with respect to shift parameter beta, of shape (D,)
     """
     dx, dgamma, dbeta = None, None, None
+    mean,var,x,x_nor,eps,gamma,beta = cache
     ###########################################################################
     # TODO: Implement the backward pass for batch normalization. Store the    #
     # results in the dx, dgamma, and dbeta variables.                         #
     # Referencing the original paper (https://arxiv.org/abs/1502.03167)       #
     # might prove to be helpful.                                              #
     ###########################################################################
-    pass
+    N,D = x.shape
+    dbeta = np.sum(dout,axis=0)
+    dgamma = np.sum(dout * x_nor,axis=0)
+    dx_nor = gamma * dout
+    dmean = dx_nor * 1/np.sqrt(var + eps)
+    dinverseVar = np.sum((x - mean) * dx_nor,axis=0)
+    dvar = -1/(np.sqrt(var + eps)**2) * dinverseVar
+    dsqVar = 1/2 * 1/np.sqrt(var + eps) * dvar
+    dsq = 1/N * np.ones((N,D)) * dsqVar
+    dsubMean = 2* (x - mean) * dsq
+    dx1 = dsubMean +  dmean
+    dmean2 = -1 * np.sum(dsubMean + dmean,axis=0)
+    dx2 = 1/N * np.ones((N,D)) * dmean2
+    dx = dx1 + dx2
+    
+    
     ###########################################################################
     #                             END OF YOUR CODE                            #
     ###########################################################################
@@ -249,6 +275,7 @@ def batchnorm_backward_alt(dout, cache):
     Inputs / outputs: Same as batchnorm_backward
     """
     dx, dgamma, dbeta = None, None, None
+    
     ###########################################################################
     # TODO: Implement the backward pass for batch normalization. Store the    #
     # results in the dx, dgamma, and dbeta variables.                         #
@@ -258,6 +285,7 @@ def batchnorm_backward_alt(dout, cache):
     # single statement; our implementation fits on a single 80-character line.#
     ###########################################################################
     pass
+    
     ###########################################################################
     #                             END OF YOUR CODE                            #
     ###########################################################################
@@ -274,6 +302,7 @@ def layernorm_forward(x, gamma, beta, ln_param):
     
     Note that in contrast to batch normalization, the behavior during train and test-time for
     layer normalization are identical, and we do not need to keep track of running averages
+    print("dout: :",x_nor.shape)
     of any sort.
 
     Input:
@@ -710,6 +739,8 @@ def softmax_loss(x, y):
     - loss: Scalar giving the loss
     - dx: Gradient of the loss with respect to x
     """
+    # previous 
+    """ 
     shifted_logits = x - np.max(x, axis=1, keepdims=True)
     Z = np.sum(np.exp(shifted_logits), axis=1, keepdims=True)
     log_probs = shifted_logits - np.log(Z)
@@ -721,3 +752,14 @@ def softmax_loss(x, y):
     dx[np.arange(N), y] -= 1
     dx /= N
     return loss, dx
+    """
+    N = x.shape[0]
+    shifted_logits = x - np.max(x, axis=1, keepdims=True)
+    Z = np.sum(np.exp(shifted_logits), axis=1, keepdims=True)
+    log_probs = np.exp(shifted_logits)/Z
+    crossEntrophy = -np.log(log_probs[range(N), y])
+    loss = np.sum(crossEntrophy)/N 
+    dx = log_probs.copy()
+    dx[range(N), y] -=  1
+    dx /= N
+    return loss,dx

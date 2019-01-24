@@ -1,0 +1,4 @@
+/shared/home/manish.mourya001/Imagenet/phase2/cs231n/optim.py:154: RuntimeWarning: invalid value encountered in sqrt
+  next_w = w - learning_r * mt /(np.sqrt(vt) + eps)
+/shared/home/manish.mourya001/Imagenet/phase2/cs231n/optim.py:106: RuntimeWarning: invalid value encountered in sqrt
+  next_w = w - learning_r * dw/(np.sqrt(cache) + eps)

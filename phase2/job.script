@@ -64,4 +64,5 @@
 module load /shared/home/manish.mourya001/anaconda3
 source activate cs231n
 python fully_connected_net.py
+##python batchNormalization.py
 source deactivate cs231n
