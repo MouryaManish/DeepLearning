@@ -5,20 +5,30 @@ import numpy as np
 def get_im2col_indices(x_shape, field_height, field_width, padding=1, stride=1):
     # First figure out what the size of the output should be
     N, C, H, W = x_shape
+    #print(x_shape)
+    #print("************ testing\n",field_height,field_width,padding,stride)
     assert (H + 2 * padding - field_height) % stride == 0
     assert (W + 2 * padding - field_height) % stride == 0
     out_height = (H + 2 * padding - field_height) / stride + 1
     out_width = (W + 2 * padding - field_width) / stride + 1
-
+    #print("out he: ", out_height, "  out width: ",out_width)
+    #print("input he: ", field_height, "input width: ",field_width)
     i0 = np.repeat(np.arange(field_height), field_width)
+    #print("1: \n",i0)
     i0 = np.tile(i0, C)
-    i1 = stride * np.repeat(np.arange(out_height), out_width)
+    #print("2: \n",i0)
+    i1 = stride * np.repeat(np.arange(int(out_height)), int(out_width))
+    #print("3: \n",i1)
     j0 = np.tile(np.arange(field_width), field_height * C)
-    j1 = stride * np.tile(np.arange(out_width), out_height)
+    #print("4: \n",j0)
+    j1 = stride * np.tile(np.arange(int(out_width)), int(out_height))
+    #print("5: \n",j1)
     i = i0.reshape(-1, 1) + i1.reshape(1, -1)
+    #print("6: \n",i)
     j = j0.reshape(-1, 1) + j1.reshape(1, -1)
-
+    #print("7: \n",j)
     k = np.repeat(np.arange(C), field_height * field_width).reshape(-1, 1)
+    #print("8: \n",k)
 
     return (k, i, j)
 
@@ -31,10 +41,20 @@ def im2col_indices(x, field_height, field_width, padding=1, stride=1):
 
     k, i, j = get_im2col_indices(x.shape, field_height, field_width, padding,
                                  stride)
-
+   # print("shapes\n k={0}\ni={1}\nj={2}".format(k,i,j))
+    #print("x shape : ",x.shape)
+  #  print("x image : \n",x_padded)
+   # print("shapes\n k={0}\ni={1}\nj={2}".format(k.shape,i.shape,j.shape))
+    #print("shapes\n k={0}\ni={1}\nj={2}".format(k,i,j))
     cols = x_padded[:, k, i, j]
+    #print("cols shape {0}".format(cols.shape))
+    #print("cols \n {0}".format(cols))
     C = x.shape[1]
+    #print("C shape {0}".format(C))
     cols = cols.transpose(1, 2, 0).reshape(field_height * field_width * C, -1)
+    #print("Col shape after transpose \n{0}".format(cols))
+    #print("cols shape {0}".format(cols.shape))
+    #print("cols: \n{0}".format(cols))
     return cols
 
 

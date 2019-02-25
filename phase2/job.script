@@ -63,6 +63,6 @@
 ##module load python/Anaconda3-5.1.0
 module load /shared/home/manish.mourya001/anaconda3
 source activate cs231n
-python fully_connected_net.py
+python conv_net.py
 ##python batchNormalization.py
 source deactivate cs231n

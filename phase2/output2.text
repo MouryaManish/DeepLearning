@@ -1,0 +1,26 @@
+
+relative error
+
+(49000, 32, 32, 3)
+(1000, 32, 32, 3)
+(1000, 32, 32, 3)
+X_train:  (49000, 3, 32, 32)
+y_train:  (49000,)
+X_val:  (1000, 3, 32, 32)
+y_val:  (1000,)
+X_test:  (1000, 3, 32, 32)
+y_test:  (1000,)
+
+testing sandwich layers
+
+Testing conv_relu_pool
+dx error:  6.514336569263308e-09
+dw error:  1.490843753539445e-08
+db error:  2.037390356217257e-09
+
+testing swandwich layers
+
+Testing conv_relu:
+dx error:  3.5600610115232832e-09
+dw error:  2.2497700915729298e-10
+db error:  1.3087619975802167e-10
