@@ -11,56 +11,7 @@ y_val:  (1000,)
 X_test:  (1000, 3, 32, 32)
 y_test:  (1000,)
 
-3 layer training
+3 layer cnn
 
-(Iteration 1 / 980) loss: 2.306631
-(Epoch 0 / 1) train acc: 0.104000; val_acc: 0.124000
-(Iteration 21 / 980) loss: 2.319811
-(Iteration 41 / 980) loss: 2.534936
-(Iteration 61 / 980) loss: 2.155680
-(Iteration 81 / 980) loss: 2.032056
-(Iteration 101 / 980) loss: 1.741989
-(Iteration 121 / 980) loss: 2.215697
-(Iteration 141 / 980) loss: 1.637813
-(Iteration 161 / 980) loss: 1.968148
-(Iteration 181 / 980) loss: 1.710152
-(Iteration 201 / 980) loss: 1.772481
-(Iteration 221 / 980) loss: 1.652822
-(Iteration 241 / 980) loss: 1.734240
-(Iteration 261 / 980) loss: 1.700994
-(Iteration 281 / 980) loss: 1.734571
-(Iteration 301 / 980) loss: 1.795148
-(Iteration 321 / 980) loss: 1.603617
-(Iteration 341 / 980) loss: 1.578759
-(Iteration 361 / 980) loss: 1.690380
-(Iteration 381 / 980) loss: 1.702370
-(Iteration 401 / 980) loss: 1.383587
-(Iteration 421 / 980) loss: 1.273084
-(Iteration 441 / 980) loss: 1.443580
-(Iteration 461 / 980) loss: 1.447054
-(Iteration 481 / 980) loss: 1.697957
-(Iteration 501 / 980) loss: 1.538864
-(Iteration 521 / 980) loss: 1.690515
-(Iteration 541 / 980) loss: 1.499455
-(Iteration 561 / 980) loss: 1.620096
-(Iteration 581 / 980) loss: 1.668655
-(Iteration 601 / 980) loss: 1.675239
-(Iteration 621 / 980) loss: 1.614910
-(Iteration 641 / 980) loss: 1.760614
-(Iteration 661 / 980) loss: 1.459699
-(Iteration 681 / 980) loss: 1.573730
-(Iteration 701 / 980) loss: 1.369173
-(Iteration 721 / 980) loss: 1.729425
-(Iteration 741 / 980) loss: 1.572964
-(Iteration 761 / 980) loss: 1.304412
-(Iteration 781 / 980) loss: 1.490561
-(Iteration 801 / 980) loss: 1.658939
-(Iteration 821 / 980) loss: 1.201902
-(Iteration 841 / 980) loss: 1.528765
-(Iteration 861 / 980) loss: 1.536733
-(Iteration 881 / 980) loss: 1.454738
-(Iteration 901 / 980) loss: 1.702172
-(Iteration 921 / 980) loss: 1.376246
-(Iteration 941 / 980) loss: 1.553592
-(Iteration 961 / 980) loss: 1.143852
-(Epoch 1 / 1) train acc: 0.486000; val_acc: 0.498000
+Initial loss (no regularization):  2.3025852881011817
+Initial loss (with regularization):  2.7146882497203384

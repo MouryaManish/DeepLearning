@@ -1,0 +1,351 @@
+
+relative error
+
+('X_train: ', (240, 1, 28, 32))
+('y_train: ', (240,))
+('X_val: ', (20, 1, 28, 32))
+('y_val: ', (20,))
+('X_test: ', (130, 1, 28, 32))
+('y_test: ', (130,))
+
+3 layer cnn
+
+
+ no. of epoch15
+
+
+ batch_size40
+
+
+using rule: rmsprop
+
+(Iteration 1 / 90) loss: 0.696697
+(Epoch 0 / 15) train acc: 0.512500; val_acc: 0.450000
+(Epoch 1 / 15) train acc: 0.675000; val_acc: 0.550000
+(Epoch 2 / 15) train acc: 0.787500; val_acc: 0.650000
+(Epoch 3 / 15) train acc: 0.858333; val_acc: 0.650000
+(Iteration 21 / 90) loss: 0.629584
+(Epoch 4 / 15) train acc: 0.895833; val_acc: 0.650000
+(Epoch 5 / 15) train acc: 0.925000; val_acc: 0.700000
+(Epoch 6 / 15) train acc: 0.945833; val_acc: 0.650000
+(Iteration 41 / 90) loss: 0.449653
+(Epoch 7 / 15) train acc: 0.966667; val_acc: 0.750000
+(Epoch 8 / 15) train acc: 0.983333; val_acc: 0.750000
+(Epoch 9 / 15) train acc: 0.995833; val_acc: 0.800000
+(Epoch 10 / 15) train acc: 0.987500; val_acc: 0.750000
+(Iteration 61 / 90) loss: 0.314090
+(Epoch 11 / 15) train acc: 0.983333; val_acc: 0.800000
+(Epoch 12 / 15) train acc: 0.995833; val_acc: 0.850000
+(Epoch 13 / 15) train acc: 0.991667; val_acc: 0.750000
+(Iteration 81 / 90) loss: 0.216990
+(Epoch 14 / 15) train acc: 0.995833; val_acc: 0.750000
+(Epoch 15 / 15) train acc: 1.000000; val_acc: 0.850000
+
+test accuracy: 0.530769
+
+
+using rule: adam
+
+(Iteration 1 / 90) loss: 0.229233
+(Epoch 0 / 15) train acc: 0.991667; val_acc: 0.850000
+(Epoch 1 / 15) train acc: 0.979167; val_acc: 0.750000
+(Epoch 2 / 15) train acc: 0.966667; val_acc: 0.800000
+(Epoch 3 / 15) train acc: 0.970833; val_acc: 0.650000
+(Iteration 21 / 90) loss: 0.090092
+(Epoch 4 / 15) train acc: 0.987500; val_acc: 0.700000
+(Epoch 5 / 15) train acc: 1.000000; val_acc: 0.800000
+(Epoch 6 / 15) train acc: 0.995833; val_acc: 0.850000
+(Iteration 41 / 90) loss: 0.080079
+(Epoch 7 / 15) train acc: 0.995833; val_acc: 0.750000
+(Epoch 8 / 15) train acc: 1.000000; val_acc: 0.700000
+(Epoch 9 / 15) train acc: 1.000000; val_acc: 0.800000
+(Epoch 10 / 15) train acc: 1.000000; val_acc: 0.800000
+(Iteration 61 / 90) loss: 0.059412
+(Epoch 11 / 15) train acc: 1.000000; val_acc: 0.800000
+(Epoch 12 / 15) train acc: 1.000000; val_acc: 0.800000
+(Epoch 13 / 15) train acc: 1.000000; val_acc: 0.750000
+(Iteration 81 / 90) loss: 0.047731
+(Epoch 14 / 15) train acc: 1.000000; val_acc: 0.750000
+(Epoch 15 / 15) train acc: 1.000000; val_acc: 0.750000
+
+test accuracy: 0.546154
+
+
+using rule: sgd
+
+(Iteration 1 / 90) loss: 0.204041
+(Epoch 0 / 15) train acc: 0.991667; val_acc: 0.850000
+(Epoch 1 / 15) train acc: 1.000000; val_acc: 0.850000
+(Epoch 2 / 15) train acc: 1.000000; val_acc: 0.850000
+(Epoch 3 / 15) train acc: 1.000000; val_acc: 0.850000
+(Iteration 21 / 90) loss: 0.199049
+(Epoch 4 / 15) train acc: 1.000000; val_acc: 0.850000
+(Epoch 5 / 15) train acc: 1.000000; val_acc: 0.850000
+(Epoch 6 / 15) train acc: 1.000000; val_acc: 0.850000
+(Iteration 41 / 90) loss: 0.195546
+(Epoch 7 / 15) train acc: 1.000000; val_acc: 0.850000
+(Epoch 8 / 15) train acc: 1.000000; val_acc: 0.850000
+(Epoch 9 / 15) train acc: 1.000000; val_acc: 0.800000
+(Epoch 10 / 15) train acc: 1.000000; val_acc: 0.800000
+(Iteration 61 / 90) loss: 0.190186
+(Epoch 11 / 15) train acc: 1.000000; val_acc: 0.800000
+(Epoch 12 / 15) train acc: 1.000000; val_acc: 0.800000
+(Epoch 13 / 15) train acc: 1.000000; val_acc: 0.850000
+(Iteration 81 / 90) loss: 0.186699
+(Epoch 14 / 15) train acc: 1.000000; val_acc: 0.850000
+(Epoch 15 / 15) train acc: 1.000000; val_acc: 0.850000
+
+test accuracy: 0.546154
+
+
+3 layer cnn with dropouts and batchnormalization
+
+
+using rule: rmsprop
+
+(Iteration 1 / 90) loss: 0.697143
+(Epoch 0 / 15) train acc: 0.487500; val_acc: 0.550000
+(Epoch 1 / 15) train acc: 0.620833; val_acc: 0.650000
+(Epoch 2 / 15) train acc: 0.700000; val_acc: 0.800000
+(Epoch 3 / 15) train acc: 0.820833; val_acc: 0.700000
+(Iteration 21 / 90) loss: 0.594222
+(Epoch 4 / 15) train acc: 0.858333; val_acc: 0.750000
+(Epoch 5 / 15) train acc: 0.895833; val_acc: 0.750000
+(Epoch 6 / 15) train acc: 0.945833; val_acc: 0.850000
+(Iteration 41 / 90) loss: 0.604086
+(Epoch 7 / 15) train acc: 0.945833; val_acc: 0.850000
+(Epoch 8 / 15) train acc: 0.970833; val_acc: 0.850000
+(Epoch 9 / 15) train acc: 0.966667; val_acc: 0.600000
+(Epoch 10 / 15) train acc: 0.866667; val_acc: 0.600000
+(Iteration 61 / 90) loss: 0.394692
+(Epoch 11 / 15) train acc: 0.991667; val_acc: 0.800000
+(Epoch 12 / 15) train acc: 0.991667; val_acc: 0.700000
+(Epoch 13 / 15) train acc: 0.933333; val_acc: 0.600000
+(Iteration 81 / 90) loss: 0.344756
+(Epoch 14 / 15) train acc: 0.991667; val_acc: 0.850000
+(Epoch 15 / 15) train acc: 0.991667; val_acc: 0.700000
+
+test accuracy: 0.576923
+
+
+using rule: adam
+
+(Iteration 1 / 90) loss: 0.408842
+(Epoch 0 / 15) train acc: 0.941667; val_acc: 0.750000
+(Epoch 1 / 15) train acc: 0.954167; val_acc: 0.700000
+(Epoch 2 / 15) train acc: 0.925000; val_acc: 0.700000
+(Epoch 3 / 15) train acc: 0.991667; val_acc: 0.850000
+(Iteration 21 / 90) loss: 0.282404
+(Epoch 4 / 15) train acc: 0.979167; val_acc: 0.800000
+(Epoch 5 / 15) train acc: 0.983333; val_acc: 0.650000
+(Epoch 6 / 15) train acc: 0.991667; val_acc: 0.700000
+(Iteration 41 / 90) loss: 0.257563
+(Epoch 7 / 15) train acc: 1.000000; val_acc: 0.750000
+(Epoch 8 / 15) train acc: 1.000000; val_acc: 0.800000
+(Epoch 9 / 15) train acc: 0.991667; val_acc: 0.800000
+(Epoch 10 / 15) train acc: 0.991667; val_acc: 0.800000
+(Iteration 61 / 90) loss: 0.202853
+(Epoch 11 / 15) train acc: 1.000000; val_acc: 0.650000
+(Epoch 12 / 15) train acc: 1.000000; val_acc: 0.700000
+(Epoch 13 / 15) train acc: 1.000000; val_acc: 0.700000
+(Iteration 81 / 90) loss: 0.154109
+(Epoch 14 / 15) train acc: 1.000000; val_acc: 0.700000
+(Epoch 15 / 15) train acc: 1.000000; val_acc: 0.650000
+
+test accuracy: 0.569231
+
+
+using rule: sgd
+
+(Iteration 1 / 90) loss: 0.246185
+(Epoch 0 / 15) train acc: 0.970833; val_acc: 0.800000
+(Epoch 1 / 15) train acc: 0.987500; val_acc: 0.850000
+(Epoch 2 / 15) train acc: 0.991667; val_acc: 0.850000
+(Epoch 3 / 15) train acc: 0.987500; val_acc: 0.850000
+(Iteration 21 / 90) loss: 0.280969
+(Epoch 4 / 15) train acc: 0.987500; val_acc: 0.850000
+(Epoch 5 / 15) train acc: 0.987500; val_acc: 0.850000
+(Epoch 6 / 15) train acc: 0.991667; val_acc: 0.850000
+(Iteration 41 / 90) loss: 0.272392
+(Epoch 7 / 15) train acc: 0.987500; val_acc: 0.850000
+(Epoch 8 / 15) train acc: 0.987500; val_acc: 0.850000
+(Epoch 9 / 15) train acc: 0.987500; val_acc: 0.850000
+(Epoch 10 / 15) train acc: 0.991667; val_acc: 0.850000
+(Iteration 61 / 90) loss: 0.228748
+(Epoch 11 / 15) train acc: 0.991667; val_acc: 0.850000
+(Epoch 12 / 15) train acc: 0.991667; val_acc: 0.850000
+(Epoch 13 / 15) train acc: 0.991667; val_acc: 0.850000
+(Iteration 81 / 90) loss: 0.275003
+(Epoch 14 / 15) train acc: 0.995833; val_acc: 0.850000
+(Epoch 15 / 15) train acc: 0.995833; val_acc: 0.850000
+
+test accuracy: 0.576923
+
+
+3 layer cnn with batchnormalization
+
+
+using rule: rmsprop
+
+(Iteration 1 / 90) loss: 0.702367
+(Epoch 0 / 15) train acc: 0.575000; val_acc: 0.600000
+(Epoch 1 / 15) train acc: 0.625000; val_acc: 0.650000
+(Epoch 2 / 15) train acc: 0.762500; val_acc: 0.700000
+(Epoch 3 / 15) train acc: 0.850000; val_acc: 0.700000
+(Iteration 21 / 90) loss: 0.587912
+(Epoch 4 / 15) train acc: 0.837500; val_acc: 0.700000
+(Epoch 5 / 15) train acc: 0.920833; val_acc: 0.650000
+(Epoch 6 / 15) train acc: 0.937500; val_acc: 0.700000
+(Iteration 41 / 90) loss: 0.396882
+(Epoch 7 / 15) train acc: 0.925000; val_acc: 0.850000
+(Epoch 8 / 15) train acc: 0.958333; val_acc: 0.800000
+(Epoch 9 / 15) train acc: 0.954167; val_acc: 0.800000
+(Epoch 10 / 15) train acc: 0.925000; val_acc: 0.700000
+(Iteration 61 / 90) loss: 0.271003
+(Epoch 11 / 15) train acc: 0.941667; val_acc: 0.850000
+(Epoch 12 / 15) train acc: 0.979167; val_acc: 0.700000
+(Epoch 13 / 15) train acc: 1.000000; val_acc: 0.750000
+(Iteration 81 / 90) loss: 0.113434
+(Epoch 14 / 15) train acc: 1.000000; val_acc: 0.700000
+(Epoch 15 / 15) train acc: 1.000000; val_acc: 0.750000
+
+test accuracy: 0.523077
+
+
+using rule: adam
+
+(Iteration 1 / 90) loss: 0.273136
+(Epoch 0 / 15) train acc: 0.945833; val_acc: 0.850000
+(Epoch 1 / 15) train acc: 0.983333; val_acc: 0.600000
+(Epoch 2 / 15) train acc: 0.937500; val_acc: 0.600000
+(Epoch 3 / 15) train acc: 0.966667; val_acc: 0.800000
+(Iteration 21 / 90) loss: 0.232864
+(Epoch 4 / 15) train acc: 0.983333; val_acc: 0.650000
+(Epoch 5 / 15) train acc: 0.983333; val_acc: 0.800000
+(Epoch 6 / 15) train acc: 1.000000; val_acc: 0.800000
+(Iteration 41 / 90) loss: 0.202316
+(Epoch 7 / 15) train acc: 0.987500; val_acc: 0.800000
+(Epoch 8 / 15) train acc: 1.000000; val_acc: 0.800000
+(Epoch 9 / 15) train acc: 1.000000; val_acc: 0.750000
+(Epoch 10 / 15) train acc: 1.000000; val_acc: 0.750000
+(Iteration 61 / 90) loss: 0.124289
+(Epoch 11 / 15) train acc: 1.000000; val_acc: 0.750000
+(Epoch 12 / 15) train acc: 1.000000; val_acc: 0.700000
+(Epoch 13 / 15) train acc: 1.000000; val_acc: 0.650000
+(Iteration 81 / 90) loss: 0.088196
+(Epoch 14 / 15) train acc: 1.000000; val_acc: 0.700000
+(Epoch 15 / 15) train acc: 1.000000; val_acc: 0.750000
+
+test accuracy: 0.515385
+
+
+using rule: sgd
+
+(Iteration 1 / 90) loss: 0.190828
+(Epoch 0 / 15) train acc: 0.950000; val_acc: 0.850000
+(Epoch 1 / 15) train acc: 0.950000; val_acc: 0.850000
+(Epoch 2 / 15) train acc: 0.954167; val_acc: 0.800000
+(Epoch 3 / 15) train acc: 0.954167; val_acc: 0.800000
+(Iteration 21 / 90) loss: 0.296209
+(Epoch 4 / 15) train acc: 0.954167; val_acc: 0.800000
+(Epoch 5 / 15) train acc: 0.954167; val_acc: 0.800000
+(Epoch 6 / 15) train acc: 0.958333; val_acc: 0.800000
+(Iteration 41 / 90) loss: 0.275721
+(Epoch 7 / 15) train acc: 0.958333; val_acc: 0.800000
+(Epoch 8 / 15) train acc: 0.958333; val_acc: 0.800000
+(Epoch 9 / 15) train acc: 0.962500; val_acc: 0.800000
+(Epoch 10 / 15) train acc: 0.966667; val_acc: 0.800000
+(Iteration 61 / 90) loss: 0.290902
+(Epoch 11 / 15) train acc: 0.962500; val_acc: 0.800000
+(Epoch 12 / 15) train acc: 0.970833; val_acc: 0.800000
+(Epoch 13 / 15) train acc: 0.970833; val_acc: 0.800000
+(Iteration 81 / 90) loss: 0.207739
+(Epoch 14 / 15) train acc: 0.970833; val_acc: 0.800000
+(Epoch 15 / 15) train acc: 0.970833; val_acc: 0.800000
+
+test accuracy: 0.507692
+
+
+3 layer cnn with dropouts
+
+
+using rule: rmsprop
+
+(Iteration 1 / 90) loss: 0.696619
+(Epoch 0 / 15) train acc: 0.491667; val_acc: 0.550000
+(Epoch 1 / 15) train acc: 0.520833; val_acc: 0.300000
+(Epoch 2 / 15) train acc: 0.679167; val_acc: 0.550000
+(Epoch 3 / 15) train acc: 0.795833; val_acc: 0.550000
+(Iteration 21 / 90) loss: 0.798469
+(Epoch 4 / 15) train acc: 0.862500; val_acc: 0.600000
+(Epoch 5 / 15) train acc: 0.887500; val_acc: 0.550000
+(Epoch 6 / 15) train acc: 0.925000; val_acc: 0.600000
+(Iteration 41 / 90) loss: 0.554218
+(Epoch 7 / 15) train acc: 0.945833; val_acc: 0.600000
+(Epoch 8 / 15) train acc: 0.979167; val_acc: 0.700000
+(Epoch 9 / 15) train acc: 0.975000; val_acc: 0.650000
+(Epoch 10 / 15) train acc: 0.975000; val_acc: 0.650000
+(Iteration 61 / 90) loss: 0.418403
+(Epoch 11 / 15) train acc: 0.966667; val_acc: 0.700000
+(Epoch 12 / 15) train acc: 0.979167; val_acc: 0.650000
+(Epoch 13 / 15) train acc: 0.983333; val_acc: 0.650000
+(Iteration 81 / 90) loss: 0.260844
+(Epoch 14 / 15) train acc: 0.987500; val_acc: 0.650000
+(Epoch 15 / 15) train acc: 0.995833; val_acc: 0.650000
+
+test accuracy: 0.500000
+
+
+using rule: adam
+
+(Iteration 1 / 90) loss: 0.353795
+(Epoch 0 / 15) train acc: 0.970833; val_acc: 0.700000
+(Epoch 1 / 15) train acc: 0.962500; val_acc: 0.750000
+(Epoch 2 / 15) train acc: 0.970833; val_acc: 0.700000
+(Epoch 3 / 15) train acc: 0.983333; val_acc: 0.700000
+(Iteration 21 / 90) loss: 0.174537
+(Epoch 4 / 15) train acc: 0.975000; val_acc: 0.650000
+(Epoch 5 / 15) train acc: 0.979167; val_acc: 0.650000
+(Epoch 6 / 15) train acc: 0.991667; val_acc: 0.650000
+(Iteration 41 / 90) loss: 0.085150
+(Epoch 7 / 15) train acc: 1.000000; val_acc: 0.600000
+(Epoch 8 / 15) train acc: 0.995833; val_acc: 0.600000
+(Epoch 9 / 15) train acc: 0.995833; val_acc: 0.650000
+(Epoch 10 / 15) train acc: 0.995833; val_acc: 0.650000
+(Iteration 61 / 90) loss: 0.067225
+(Epoch 11 / 15) train acc: 0.979167; val_acc: 0.700000
+(Epoch 12 / 15) train acc: 1.000000; val_acc: 0.600000
+(Epoch 13 / 15) train acc: 0.991667; val_acc: 0.550000
+(Iteration 81 / 90) loss: 0.095818
+(Epoch 14 / 15) train acc: 1.000000; val_acc: 0.600000
+(Epoch 15 / 15) train acc: 0.995833; val_acc: 0.650000
+
+test accuracy: 0.523077
+
+
+using rule: sgd
+
+(Iteration 1 / 90) loss: 0.204191
+(Epoch 0 / 15) train acc: 0.958333; val_acc: 0.750000
+(Epoch 1 / 15) train acc: 0.966667; val_acc: 0.700000
+(Epoch 2 / 15) train acc: 0.966667; val_acc: 0.750000
+(Epoch 3 / 15) train acc: 0.979167; val_acc: 0.750000
+(Iteration 21 / 90) loss: 0.218663
+(Epoch 4 / 15) train acc: 0.983333; val_acc: 0.700000
+(Epoch 5 / 15) train acc: 0.966667; val_acc: 0.700000
+(Epoch 6 / 15) train acc: 0.975000; val_acc: 0.750000
+(Iteration 41 / 90) loss: 0.269696
+(Epoch 7 / 15) train acc: 0.966667; val_acc: 0.750000
+(Epoch 8 / 15) train acc: 0.979167; val_acc: 0.750000
+(Epoch 9 / 15) train acc: 0.970833; val_acc: 0.750000
+(Epoch 10 / 15) train acc: 0.979167; val_acc: 0.700000
+(Iteration 61 / 90) loss: 0.181926
+(Epoch 11 / 15) train acc: 0.983333; val_acc: 0.750000
+(Epoch 12 / 15) train acc: 0.979167; val_acc: 0.650000
+(Epoch 13 / 15) train acc: 0.987500; val_acc: 0.700000
+(Iteration 81 / 90) loss: 0.180341
+(Epoch 14 / 15) train acc: 0.979167; val_acc: 0.700000
+(Epoch 15 / 15) train acc: 0.983333; val_acc: 0.700000
+
+test accuracy: 0.530769
+

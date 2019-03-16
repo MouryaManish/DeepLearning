@@ -80,7 +80,6 @@ a_norm, _ = batchnorm_forward(a, gamma, beta, bn_param)
 print('After batch normalization (test-time):')
 print('  means: ', a_norm.mean(axis=0))
 print('  stds: ', a_norm.std(axis=0))
-"""
 #################################################################################################################################
 print("\n********************************Batch Normalization: Backward pass----Two Layer Net*****************************\n")
 #################################################################################################################################
@@ -107,7 +106,6 @@ dx, dgamma, dbeta = batchnorm_backward(dout, cache)
 print('dx error: ', rel_error(dx_num, dx))
 print('dgamma error: ', rel_error(da_num, dgamma))
 print('dbeta error: ', rel_error(db_num, dbeta))
-
 """
 #################################################################################################################################
 print("\n**********************Batch Normalization:FC_NET***********************************************\n")
@@ -134,4 +132,3 @@ for reg in [0, 3.14]:
     grad_num = eval_numerical_gradient(f, model.params[name], verbose=False, h=1e-5)
     print('%s relative error: %.2e' % (name, rel_error(grad_num, grads[name])))
   if reg == 0: print()
-"""

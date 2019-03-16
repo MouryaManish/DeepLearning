@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# specify which shell to use.  Bash is recommended unless
+# there is a compelling reason to use another.
+
+# Sample slurm submission script for the Gibbs compute cluster
+# Lines beginning with # are comments, and will be ignored by
+# the interpreter.  Lines beginning with #SBATCH are directives
+# to the scheduler.  These in turn can be commented out by
+# adding a second # (e.g. ##SBATCH lines will not be processed
+# by the scheduler).
+#
+#
+# set name of job
+#SBATCH --job-name=cnnNet
+#
+
+# set the number of nodes
+##SBATCH -N2
+
+# set the number of processes per node
+#SBATCH -n 2
+
+#set an account to use
+#if not used then default will be used
+##SBATCH --account=scavenger
+
+# set the number of GPU cards per node
+# --gres=gpu[[:type]:count]
+#SBATCH --gres=gpu:K80:2
+
+#Or can use this
+##SBATCH --gres=gpu:2
+
+
+# set max wallclock time  DD-HH:MM:SS
+#SBATCH --time=14-10:00:00
+
+
+#To get error and output
+#SBATCH --error=error_cnn.txt
+#SBATCH --output=output/output_test_cnn.txt
+#
+
+#Optional
+# set the partition where the job will run
+##SBATCH --partition=GTX670
+
+#Optional
+# mail alert at start, end and abortion of execution
+##SBATCH --mail-type=ALL
+
+# send mail to this address
+##SBATCH --mail-user=joe.user@umb.edu
+
+
+# Put your job commands here, including loading any needed
+# modules.
+
+# module load <module_name>
+# this job simply reports the hostname and sleeps for two minutes
+
+##module load python/Anaconda3-5.1.0
+module load /shared/home/manish.mourya001/anaconda3
+source activate cs231n
+##python test_feedForwardNet.py
+##python fully_connected_net.py
+python test_CnnNet.py
+##python test_fullyConnectedNet.py
+##python conv_net.py
+##python batchNormalization.py
+#python dropout.py
+##python test.py
+source deactivate cs231n
