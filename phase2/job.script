@@ -27,7 +27,8 @@
 
 # set the number of GPU cards per node
 # --gres=gpu[[:type]:count]
-#SBATCH --gres=gpu:K80:2
+##SBATCH --gres=gpu:K80:2
+#SBATCH --gres=gpu:GTX980:4
 
 #Or can use this
 ##SBATCH --gres=gpu:2
@@ -38,7 +39,7 @@
 
 
 #To get error and output
-#SBATCH --error=myRecord.err
+#SBATCH --error=error.err
 #SBATCH --output=output.text
 #
 
@@ -63,6 +64,7 @@
 ##module load python/Anaconda3-5.1.0
 module load /shared/home/manish.mourya001/anaconda3
 source activate cs231n
-python conv_net.py
+##python conv_net.py
 ##python batchNormalization.py
+python tensorflow.py
 source deactivate cs231n

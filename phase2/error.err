@@ -6,3 +6,11 @@ Traceback (most recent call last):
   File "/shared/home/manish.mourya001/Imagenet/phase2/tensorflow.py", line 14, in load_cifar10
     cifar10 = tf.keras.datasets.cifar10.load_data()
 AttributeError: module 'tensorflow' has no attribute 'keras'
+Traceback (most recent call last):
+  File "tensorflow.py", line 2, in <module>
+    import tensorflow as tf
+  File "/shared/home/manish.mourya001/Imagenet/phase2/tensorflow.py", line 47, in <module>
+    X_train, y_train, X_val, y_val, X_test, y_test = load_cifar10()
+  File "/shared/home/manish.mourya001/Imagenet/phase2/tensorflow.py", line 14, in load_cifar10
+    cifar10 = tf.keras.datasets.cifar10.load_data()
+AttributeError: module 'tensorflow' has no attribute 'keras'

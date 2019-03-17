@@ -21,6 +21,7 @@ def load_CIFAR_batch(filename):
         datadict = load_pickle(f)
         X = datadict['data']
         Y = datadict['labels']
+        # data is in right shape as 10k,3,32,32 then we change into r g b in the transpose
         X = X.reshape(10000, 3, 32, 32).transpose(0,2,3,1).astype("float")
         Y = np.array(Y)
         return X, Y
@@ -64,7 +65,7 @@ def get_CIFAR10_data(num_training=49000, num_validation=1000, num_test=1000,
     y_test = y_test[mask]
 
     # Normalize the data: subtract the mean image
-    if subtract_mean:
+    if subtract_mean: # take mean for all the reds also for greens and blues
         mean_image = np.mean(X_train, axis=0)
         X_train -= mean_image
         X_val -= mean_image
