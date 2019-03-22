@@ -29,14 +29,22 @@ for k, v in list(data.items()):
 X = data["X_test"]
 y = data["y_test"]
 
+num_epochs = 20
+optimization =["rmsprop","adam"]
+batch_size= 40
+
+learning_rate = [1e-4,5e-4,1e-3,5e-3]
+reg = [0.0,0.1,0.2,0.3,0.4]
+lr_decay = 1.0
+hidden_dim = [80,100,110]
+num_epochs = [10,12,15,20]
+
 
 
 ################################################################################################################################################
 print("\n3 layer cnn\n")
 #################################################################################################################################################
-num_epochs = 15
-optimization =["rmsprop","adam","sgd"]
-batch_size= 40
+
 print("\n no. of epoch%d\n"%(num_epochs))
 print("\n batch_size%d\n"%(batch_size))
 #model  = ThreeLayerConvNet(weight_scale=0.001, hidden_dim=500, reg=0.001,normalization="batchnorm",dropout=0.5)

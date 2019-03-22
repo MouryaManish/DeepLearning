@@ -262,7 +262,7 @@ class Solver(object):
         num_train = self.X_train.shape[0]
         iterations_per_epoch = max(num_train // self.batch_size, 1)
         num_iterations = self.num_epochs * iterations_per_epoch
-
+        acc = 0.64
         for t in range(num_iterations):
             self._step()
 
@@ -290,7 +290,7 @@ class Solver(object):
                     num_samples=self.num_val_samples)
                 self.train_acc_history.append(train_acc)
                 self.val_acc_history.append(val_acc)
-                self._save_checkpoint()
+                #self._save_checkpoint()
 
                 if self.verbose:
                     print('(Epoch %d / %d) train acc: %f; val_acc: %f' % (
@@ -301,7 +301,8 @@ class Solver(object):
                     self.best_val_acc = val_acc
                     self.best_params = {}
                     for k, v in self.model.params.items():
-                        self.best_params[k] = v.copy()
+                        self.best_params[k] = self.model.params[k]
 
         # At the end of training swap the best params into the model
-        self.model.params = self.best_params
+        for k,v in self.best_params.items():
+            self.model.params[k] = self.best_params[k]

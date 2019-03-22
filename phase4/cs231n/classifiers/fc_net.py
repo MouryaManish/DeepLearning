@@ -138,7 +138,7 @@ class FullyConnectedNet(object):
     self.params dictionary and will be learned using the Solver class.
     """
 
-    def __init__(self, hidden_dims, input_dim=1*28*32, num_classes=2,
+    def __init__(self, hidden_dims, input_dim=1*55*64, num_classes=2,
                  dropout=1, normalization=None, reg=0.0,
                  weight_scale=1e-2, dtype=np.float32, seed=None):
         """

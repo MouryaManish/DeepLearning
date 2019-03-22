@@ -2,15 +2,14 @@ import scipy.io as sio
 import numpy as np
 
 def data_invade():
-    path = "data_for_project/sortedData.mat"
+    #path = "data_for_project/sortedData.mat"
+    path = "sortedData.mat"
     mat = sio.loadmat(path,squeeze_me=True)
     data = mat.get("Data")
-
     # retrieve the output patient list 
     output = [] 
     for i in data[:,0]:
-        	output.append(i[2]-1)
-
+        output.append(i[2]-1)
 
     output = np.repeat(output,6)
 
@@ -61,8 +60,8 @@ def get_data():
     
     output,d2 = data_invade()
     d3 = data_polish(d2)
-    width = 32 #32 regions
-    height = 28 #27 regions
+    width = 16 #32,16
+    height =14  #28,14
     d4 = getRegionalCount(d3,width,height)
     # padding data for use during max pooling and conv. to maintain shape
     d4 = np.pad(d4,((0,0),(0,0),(0,1),(0,0)),mode="constant")
@@ -77,6 +76,11 @@ def get_data():
     trainX = d4[l1]
     trainY = output[l1]
     # creating 20 validation set and 240 for training set
+    X_val= trainX[240:260]
+    y_val = trainY[240:260]
+    X_train = trainX[:240]
+    y_train = trainY[:240]
+    """
     l1 = np.random.choice(260,size=20,replace=False)
     l1.sort()
     X_val = np.zeros((20,1,d4.shape[2],d4.shape[3]))
@@ -89,7 +93,7 @@ def get_data():
 
     X_train = np.delete(trainX,l1,0)
     y_train = np.delete(trainY,l1,0)     
-        
+    """        
     return {
             'X_train':X_train,'y_train':y_train,
             'X_val':X_val, 'y_val':y_val,

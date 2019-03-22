@@ -66,5 +66,5 @@ module load /shared/home/manish.mourya001/anaconda3
 source activate cs231n
 ##python conv_net.py
 ##python batchNormalization.py
-python tensorflow.py
+python t_flow.py
 source deactivate cs231n
