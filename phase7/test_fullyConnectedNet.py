@@ -7,7 +7,7 @@ from cs231n.classifiers.fc_net import *
 from cs231n.data_utils import get_CIFAR10_data
 from cs231n.gradient_check import eval_numerical_gradient, eval_numerical_gradient_array
 from cs231n.solver import Solver
-from data_for_project.importData import get_data
+from data_for_project.importphase7 import get_data
 
 
 def rel_error(x, y):
@@ -26,12 +26,12 @@ for k, v in list(data.items()):
 weight_scale = 1e-2
 #learning_rate = 1e-4
 batch_size = 546
-num_epochs = 15
+num_epochs = 10
 optimization = ["rmsprop"]
 X = data["X_test"]
 y = data["y_test"]
 y2 = data["y_main_test"]
-hidden_size=2
+hidden_size=3
 test =False
 """
 print("\n####################################################################################################################################\n")
@@ -65,15 +65,16 @@ if not test:
     #state = np.random.get_state()
     acc = 0.0
     for i in range(1):
-        learning_rate = 10**np.random.uniform(low=-9,high=-3,size = 5)
-        reg =np.random.uniform(low=0.45,high=0.75,size = 5)
-        dropout =[0.7] #np.random.uniform(low=0.5,high=0.8,size = 2)
+        learning_rate = 10**np.random.uniform(low=-9,high=-3,size = 20)
+        reg =np.random.uniform(low=0.45,high=0.75,size = 20)
+        dropout = np.random.uniform(low=0.5,high=0.7,size = 2)
+
         print("\niteration from main:%d\n"%(i))
         for dp in dropout:
             for lr in learning_rate:
                 for rg in reg:
                     # weight_scale=weight_scale,reg=rg, dtype=np.float64,normalization="batchnorm",dropout = dp)
-                    model = FullyConnectedNet([hidden_size,hidden_size],input_dim=1*5,
+                    model = FullyConnectedNet([hidden_size,hidden_size],input_dim=1*4,
                                   weight_scale=weight_scale,reg=rg, dtype=np.float64,normalization="batchnorm",dropout = dp)
                     solver = Solver(model,data,
                                     print_every=10, num_epochs=num_epochs, batch_size=batch_size,
@@ -86,7 +87,7 @@ if not test:
                     result = solver.check_accuracy_for_saccarde( X, y2, num_samples=None, batch_size=546)
                     if result > acc:
                         acc = result
-                        marker = "cs231n/data_record/3layer_itteration_%d_hidden_%d_lr_%f_end_rg_%f_end_dp_%f_acc_%f"%(i,hidden_size,lr,rg,dp,acc)
+                        marker = "cs231n/data_record/fix_saccade/3layer_itteration_%d_hidden_%d_lr_%f_end_rg_%f_end_dp_%f_acc_%f"%(i,hidden_size,lr,rg,dp,acc)
                         solver.checkpoint_name = marker
                         solver._save_checkpoint() 
                         print("\niteration = %d\n"%(i))
@@ -94,6 +95,7 @@ if not test:
                         print("\nreg = %f\n"%(rg))
                         print("\n dropout = %f\n"%(dp))
                         print("\ntest accuracy = %f\n"%(acc))
+                        print("\n**************************************************\n")
 
 
 
