@@ -1,3 +1,62 @@
-cs231n.github.io: is indeed a good link for Deep learning 
-All thanks to Stanford University, Professor. Fei-Fei Li, justin Johnson, Serena Yeung for making it open-source and free.
+                            DETECTING SCHIZOPHRENIA THROUGH EYE MOVEMENT ANALYSIS USING
+                                        ARTIFICIAL NEURAL NETWORKS
+
+In recent years, machine learning has gained huge traction. Researchers have
+continuously applied machine learning to new fields to unravel the complex patterns
+within huge and complex datasets. Machine learning approaches have been successfully
+applied in the field of computer vision to learn from any existing patterns in images and
+classify previously “unseen” images. Recently, machine learning has been used in the
+medical field in the context of disease diagnosis. In this study, we will use machine
+learning to distinguish healthy subjects from those suffering from schizophrenia.
+Schizophrenia affects the neurotransmitters of the brain, thus impairing the neural
+connectivity of the patient, resulting in various psychotic symptoms. It not only affects
+the patient, but there is a certain risk that their relatives might develop this disease as
+well. Symptoms of schizophrenia can be controlled with early detection of the disease.
+We use eye-movement recording to obtain measures for distinguishing schizophrenic
+patients from healthy controls using a deep neural network, which could assist in early
+detection of the disease and thereby make a difference to the lives of millions of people.
+
+What is Schizophrenia?
+Schizophrenia is a serious mental illness. It limits a person’s
+ability to react to the social situation happening around him.
+Schizophrenic people typically realize the occurrence of such
+events but are indifferent to them. They are mostly socially or
+emotionally disconnected.
+
+Schizophrenia was first described by the father of modern
+psychiatry, Emil Kraepelin. He named schizophrenia as
+dementia praecox which implied a progressively deteriorating
+illness. The term schizophrenia was coined later by Bleuler.
+
+What Causes Schizophrenia?
+ Environment
+ Brain Chemistry
+ Substance Use
+ Genetics
+ 
+Why did We Study Schizophrenia?
+Schizophrenia is not a terribly common disease but it is a serious and typically
+chronic one.Worldwide about 1% of the population is diagnosed with schizophrenia and
+approximately 1.2% of Americans, approx. 3.2 million, suffer from schizophrenia.
+Schizophrenia can affect people throughout the lifespan, although new instances of
+the illness are most likely to occur in early adulthood.During the early stage of schizophrenia,patients might not be aware 
+of it themselves,if they have not been previously diagnosed with it. chizophrenia typically gradually proceeds until the person
+breaks down and the inner psychotic state gets translated into outer action. Initial change in cognition and behavior: anxiety, restlessness and
+hallucinations to small extent.
+
+Even though schizophrenia is not curable, if it is identified at
+an early stage, most of its symptoms can be controlled.
+
+Goal of Our Study
+Develop an automated system for detecting precursor markers that would act as a clue to doctors and direct them
+to consider full diagnosis and treatment of schizophrenia.We wanted to take advantage of the eye movement discrepancy that
+exists between the healthy controls and schizophrenic patients and use machine learning algorithms and classify
+between the two groups.
+
+
+
+
+
+
+
 
